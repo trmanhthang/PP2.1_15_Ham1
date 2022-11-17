@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP2.1_15</title>
+</head>
+<body>
+    <h5>Bài 1</h5>
+    <input type="button" value="Click" onclick="Click()">
+    <h5>Bài 2</h5>
+    <input id="number" type="number" onchange="Sum(this.value)">
+    <h5>Bài 3</h5>
+    <input id="num1" type="number"> 
+    <input id="num2" type="number">
+    <input type="button" onclick="Input()" value="Click">
+</body>
+<script>
+    // Bài 1
+    function Click() {
+        alert("Xin Chào")
+    }
+
+    // Bài 2
+    function Sum(num) {
+        let result = +num + 1;
+        alert(result);
+    }
+
+    // Bài 3
+    function Sum(Num1,Num2) {
+        if(Num1 > Num2) {
+            alert(Num1 + " lớn hơn " + Num2)
+        } else {
+            let result = Num1 + Num2;
+            alert(result);
+        }
+    }
+
+    function Input() {
+        let a = +document.getElementById('num1').value;
+        let b = +document.getElementById('num2').value;
+        Sum(a,b);
+    }
+
+    // Bài 5
+    let star;
+    star = prompt("Bài 4: Nhập tên ngôi sao muốn tìm: ");
+    alert(star + " thuộc chòm sao " + Check(star));
+    
+    function Check(star) {
+        let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        let index = 0;
+        let result = "";
+        for (let i = 0; i < arr1.length; i++) {
+            if (star === arr1[i]) {
+                index = i
+                for (let j = 0; j < arr2.length; j++) {
+                    if (index == j) {
+                        result = arr2[j];
+                        return result;
+                    } else {
+                        result = "Không tìm thấy chòm sao"
+                        return result;
+                    }
+                }
+            } else {
+                result = "Không tìm thấy sao";
+                return result;
+            }
+        }
+    }
+
+</script>
+</html>
